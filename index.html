@@ -12,7 +12,7 @@
   :root {
     --bg: #fbfaf7; --bg-soft: #f3f0e9; --ink: #1a1a1a; --ink-soft: #5a5a5a;
     --line: #e6e2d8; --accent: #c0392b; --radius: 10px;
-    --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+    --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -52,8 +52,9 @@
   .products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .product { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease; }
   .product:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-  .product-img { aspect-ratio: 1/1; background: var(--bg-soft); position: relative; overflow: hidden; display: grid; place-items: center; }
-  .product-img img { width: 100%; height: 100%; object-fit: cover; }
+  .product-img { aspect-ratio: 1/1; background: var(--bg-soft); position: relative; overflow: hidden; }
+  .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
+  .product:hover .product-img img { transform: scale(1.05); }
   .product-tag { position: absolute; top: 10px; left: 10px; background: var(--ink); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 9px; border-radius: 100px; letter-spacing: 0.05em; text-transform: uppercase; z-index: 1; }
   .product-tag.hot { background: var(--accent); }
   .product-body { padding: 16px 16px 18px; display: flex; flex-direction: column; flex: 1; }
@@ -153,14 +154,11 @@
     </div>
     <div class="products">
 
-      <!-- 1 -->
+      <!-- 1 Bluetooth -->
       <article class="product">
         <div class="product-img">
           <span class="product-tag hot">Mais vendido</span>
-          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:55%;height:55%;opacity:0.7">
-            <rect x="20" y="38" width="22" height="36" rx="3"/><rect x="52" y="28" width="10" height="46" rx="2"/>
-            <circle cx="65" cy="35" r="8"/><line x1="31" y1="38" x2="31" y2="20"/><line x1="20" y1="20" x2="42" y2="20"/>
-          </svg>
+          <img src="https://m.media-amazon.com/images/I/61Q5FX7YOWL._AC_SL1500_.jpg" alt="Receptor Bluetooth 5.0 AUX Essager para carro" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="product-body">
           <span class="product-cat">Áudio · Carro</span>
@@ -168,20 +166,15 @@
           <p>Adaptador para carro com cabo 3.5mm jack. Bluetooth 5.0, transmissor de música hands-free. 1.182 avaliações.</p>
           <div class="rating"><span>★★★★★</span> 4.7 · 10.000+ vendidos</div>
           <div class="price-row"><span class="price">R$ 14,08</span><span class="old-price">R$ 15,00</span></div>
-          <a href="https://s.click.aliexpress.com/e/_c4Lzy6Ht" class="btn" rel="nofollow sponsored noopener" target="_blank">
-            Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
+          <a href="https://s.click.aliexpress.com/e/_c4Lzy6Ht" class="btn" rel="nofollow sponsored noopener" target="_blank">Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
         </div>
       </article>
 
-      <!-- 2 -->
+      <!-- 2 Relógio LIGE -->
       <article class="product">
         <div class="product-img">
           <span class="product-tag">Luxo</span>
-          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:55%;height:55%;opacity:0.7">
-            <circle cx="50" cy="50" r="28"/><circle cx="50" cy="50" r="20"/><circle cx="50" cy="50" r="3" fill="#c0392b"/>
-            <line x1="50" y1="30" x2="50" y2="44"/><line x1="50" y1="50" x2="62" y2="50"/>
-          </svg>
+          <img src="https://m.media-amazon.com/images/I/71w0HkDkHUL._AC_SL1500_.jpg" alt="Relógio LIGE Cronógrafo de Couro Masculino" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="product-body">
           <span class="product-cat">Moda · Relógios</span>
@@ -189,41 +182,31 @@
           <p>Top marca de luxo, quartzo, à prova d'água 3ATM, luminoso. Visual premium por um preço acessível.</p>
           <div class="rating"><span>★★★★★</span> 4.7 · 135 vendidos</div>
           <div class="price-row"><span class="price">R$ 62,29</span><span class="old-price">R$ 124,58</span></div>
-          <a href="https://s.click.aliexpress.com/e/_c4kUUWBn" class="btn" rel="nofollow sponsored noopener" target="_blank">
-            Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
+          <a href="https://s.click.aliexpress.com/e/_c4kUUWBn" class="btn" rel="nofollow sponsored noopener" target="_blank">Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
         </div>
       </article>
 
-      <!-- 3 -->
+      <!-- 3 Escova Bambu -->
       <article class="product">
         <div class="product-img">
           <span class="product-tag hot">Top vendas</span>
-          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:55%;height:55%;opacity:0.7">
-            <rect x="35" y="22" width="8" height="56" rx="4"/><rect x="47" y="22" width="8" height="56" rx="4"/>
-            <rect x="59" y="22" width="8" height="56" rx="4"/><line x1="28" y1="22" x2="72" y2="22"/>
-          </svg>
+          <img src="https://i.pinimg.com/736x/e1/0f/4c/e10f4c4e0e6c2b9b8c3e2b5e1f0e4c3e.jpg" alt="Kit 10 Escovas de Dente de Bambu Eco" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=400&h=400&fit=crop'">
         </div>
         <div class="product-body">
           <span class="product-cat">Higiene · Sustentável</span>
           <h3>Kit 10 Escovas de Dente de Bambu Eco</h3>
-          <p>Cerdas macias, vegano, carvão de bambu, livre de plástico. Eco-friendly e 489 avaliações 4.9 estrelas.</p>
+          <p>Cerdas macias, vegano, carvão de bambu, livre de plástico. Eco-friendly com 489 avaliações 4.9 estrelas.</p>
           <div class="rating"><span>★★★★★</span> 4.9 · 4.000+ vendidos</div>
           <div class="price-row"><span class="price">R$ 15,79</span><span class="old-price">R$ 34,33</span></div>
-          <a href="https://s.click.aliexpress.com/e/_c4eQ2J4P" class="btn" rel="nofollow sponsored noopener" target="_blank">
-            Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
+          <a href="https://s.click.aliexpress.com/e/_c4eQ2J4P" class="btn" rel="nofollow sponsored noopener" target="_blank">Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
         </div>
       </article>
 
-      <!-- 4 -->
+      <!-- 4 Bolsa Primeiros Socorros -->
       <article class="product">
         <div class="product-img">
           <span class="product-tag">Saúde</span>
-          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:55%;height:55%;opacity:0.7">
-            <rect x="22" y="30" width="56" height="44" rx="5"/><line x1="50" y1="44" x2="50" y2="60"/><line x1="42" y1="52" x2="58" y2="52"/>
-            <path d="M34 30 L34 24 Q34 20 38 20 L62 20 Q66 20 66 24 L66 30"/>
-          </svg>
+          <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=500&h=500&fit=crop" alt="Bolsa Kit Primeiros Socorros Portátil" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="product-body">
           <span class="product-cat">Saúde · Organização</span>
@@ -231,20 +214,15 @@
           <p>Bolsa de remédios com zíper, tamanho compacto, ideal para casa, escola, viagens e emergências.</p>
           <div class="rating"><span>★★★★★</span> 4.7 · 2.000+ vendidos</div>
           <div class="price-row"><span class="price">R$ 12,51</span><span class="old-price">R$ 26,60</span></div>
-          <a href="https://s.click.aliexpress.com/e/_c3rPPX4L" class="btn" rel="nofollow sponsored noopener" target="_blank">
-            Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
+          <a href="https://s.click.aliexpress.com/e/_c3rPPX4L" class="btn" rel="nofollow sponsored noopener" target="_blank">Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
         </div>
       </article>
 
-      <!-- 5 -->
+      <!-- 5 Cooler PS5 -->
       <article class="product">
         <div class="product-img">
           <span class="product-tag hot">Games</span>
-          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:55%;height:55%;opacity:0.7">
-            <rect x="30" y="20" width="40" height="60" rx="4"/><circle cx="50" cy="38" r="7"/>
-            <line x1="38" y1="58" x2="62" y2="58"/><line x1="38" y1="65" x2="62" y2="65"/>
-          </svg>
+          <img src="https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=500&h=500&fit=crop" alt="Cooler Ventilador PS5 com LED 3 Velocidades" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="product-body">
           <span class="product-cat">Games · PS5</span>
@@ -252,21 +230,15 @@
           <p>Resfriamento silencioso e eficiente para PS5. Sistema LED, 3 velocidades, edição digital e disco.</p>
           <div class="rating"><span>★★★★½</span> 4.5 · 169 vendidos</div>
           <div class="price-row"><span class="price">R$ 59,89</span><span class="old-price">R$ 136,11</span></div>
-          <a href="https://s.click.aliexpress.com/e/_c2xacm7l" class="btn" rel="nofollow sponsored noopener" target="_blank">
-            Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
+          <a href="https://s.click.aliexpress.com/e/_c2xacm7l" class="btn" rel="nofollow sponsored noopener" target="_blank">Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
         </div>
       </article>
 
-      <!-- 6 -->
+      <!-- 6 Câmera Mini -->
       <article class="product">
         <div class="product-img">
           <span class="product-tag">Segurança</span>
-          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:55%;height:55%;opacity:0.7">
-            <circle cx="50" cy="50" r="26"/><circle cx="50" cy="50" r="10"/>
-            <line x1="50" y1="20" x2="50" y2="26"/><line x1="50" y1="74" x2="50" y2="80"/>
-            <line x1="20" y1="50" x2="26" y2="50"/><line x1="74" y1="50" x2="80" y2="50"/>
-          </svg>
+          <img src="https://m.media-amazon.com/images/I/61aY5KHcNEL._AC_SL1500_.jpg" alt="Câmera Mini X5 1080P WiFi Visão Noturna" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=400&h=400&fit=crop'">
         </div>
         <div class="product-body">
           <span class="product-cat">Segurança · Casa</span>
@@ -274,21 +246,15 @@
           <p>Câmera sem fio HD, detecção de movimento, visão noturna, gravação de vídeo e áudio. 4.083 avaliações!</p>
           <div class="rating"><span>★★★★★</span> 4.9 · 50.000+ vendidos</div>
           <div class="price-row"><span class="price">R$ 18,11</span><span class="old-price">R$ 39,36</span></div>
-          <a href="https://s.click.aliexpress.com/e/_c4cwZE9n" class="btn" rel="nofollow sponsored noopener" target="_blank">
-            Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
+          <a href="https://s.click.aliexpress.com/e/_c4cwZE9n" class="btn" rel="nofollow sponsored noopener" target="_blank">Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
         </div>
       </article>
 
-      <!-- 7 -->
+      <!-- 7 Rádio Solar -->
       <article class="product">
         <div class="product-img">
           <span class="product-tag hot">Sobrevivência</span>
-          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:55%;height:55%;opacity:0.7">
-            <rect x="24" y="40" width="52" height="36" rx="6"/><line x1="50" y1="22" x2="50" y2="40"/>
-            <line x1="26" y1="56" x2="32" y2="56"/><line x1="26" y1="62" x2="32" y2="62"/><line x1="26" y1="68" x2="32" y2="68"/>
-            <circle cx="65" cy="55" r="8"/><circle cx="65" cy="55" r="4"/>
-          </svg>
+          <img src="https://m.media-amazon.com/images/I/71oqsNH-FBL._AC_SL1500_.jpg" alt="Rádio Solar Multifuncional AM/FM Lanterna" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=400&fit=crop'">
         </div>
         <div class="product-body">
           <span class="product-cat">Emergência · Eletrônicos</span>
@@ -296,21 +262,15 @@
           <p>Rádio portátil solar, manivela, NOAA/AM/FM, lanterna LED, power bank. 2.742 avaliações 4.9 estrelas.</p>
           <div class="rating"><span>★★★★★</span> 4.9 · 10.000+ vendidos</div>
           <div class="price-row"><span class="price">R$ 63,69</span><span class="old-price">R$ 138,46</span></div>
-          <a href="https://s.click.aliexpress.com/e/_c3MG8teF" class="btn" rel="nofollow sponsored noopener" target="_blank">
-            Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
+          <a href="https://s.click.aliexpress.com/e/_c3MG8teF" class="btn" rel="nofollow sponsored noopener" target="_blank">Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
         </div>
       </article>
 
-      <!-- 8 -->
+      <!-- 8 Relógio Militar -->
       <article class="product">
         <div class="product-img">
           <span class="product-tag">Esporte</span>
-          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:55%;height:55%;opacity:0.7">
-            <circle cx="50" cy="50" r="28"/><circle cx="50" cy="50" r="20"/>
-            <line x1="50" y1="30" x2="50" y2="42"/><line x1="50" y1="50" x2="60" y2="44"/>
-            <rect x="38" y="74" width="24" height="8" rx="2"/>
-          </svg>
+          <img src="https://m.media-amazon.com/images/I/71a7lzwKJFL._AC_SL1500_.jpg" alt="Relógio Digital Militar à Prova d'Água" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop'">
         </div>
         <div class="product-body">
           <span class="product-cat">Esporte · Relógios</span>
@@ -318,9 +278,7 @@
           <p>Esportivo, luminoso, cronômetro, alarme, casual. Ideal para corrida, escalada e pesca. 1.298 avaliações.</p>
           <div class="rating"><span>★★★★★</span> 4.9 · 10.000+ vendidos</div>
           <div class="price-row"><span class="price">R$ 13,89</span><span class="old-price">R$ 30,20</span></div>
-          <a href="https://s.click.aliexpress.com/e/_c3lENO7D" class="btn" rel="nofollow sponsored noopener" target="_blank">
-            Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
+          <a href="https://s.click.aliexpress.com/e/_c3lENO7D" class="btn" rel="nofollow sponsored noopener" target="_blank">Ver oferta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
         </div>
       </article>
 
