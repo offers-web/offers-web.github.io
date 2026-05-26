@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Achados e Promoções Online — selecionamos produtos, ofertas e oportunidades encontradas em marketplaces como o AliExpress.">
+<title>Achados e Promoções Online</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --bg-soft: #f3f0e9;
+    --ink: #1a1a1a;
+    --ink-soft: #5a5a5a;
+    --line: #e6e2d8;
+    --accent: #c0392b;
+    --accent-soft: #fbe9e6;
+    --radius: 10px;
+    --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Top bar */
+  .topbar {
+    background: var(--ink);
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 0;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+  .topbar span { opacity: 0.85; }
+
+  /* Header */
+  header {
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    background-color: rgba(251, 250, 247, 0.92);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-text {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .logo-text small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+    font-size: 14px;
+  }
+  nav a {
+    color: var(--ink-soft);
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .hero p.lead {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin-bottom: 28px;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .badge {
+    font-size: 12px;
+    padding: 6px 12px;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .hero-card {
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    padding: 32px;
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .hero-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .hero-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero-card ul {
+    list-style: none;
+    font-size: 14px;
+  }
+  .hero-card li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-top: 1px solid var(--line);
+  }
+  .hero-card li:first-child { border-top: none; }
+  .hero-card li::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Section heading */
+  .section {
+    padding: 72px 0;
+  }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(28px, 3.5vw, 38px);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .section-head p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 380px;
+  }
+
+  /* Product grid */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .product {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .product:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+
+  .product-img {
+    aspect-ratio: 1 / 1;
+    background: var(--bg-soft);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+  .product-img svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.85;
+  }
+  .product-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .product-tag.hot { background: var(--accent); }
+
+  .product-body {
+    padding: 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .product-cat {
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .product h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .product p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    flex: 1;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .price {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .old-price {
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: line-through;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 16px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: var(--accent);
+  }
+  .btn svg { width: 14px; height: 14px; }
+
+  /* About */
+  .about {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .about-item h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .about-item p {
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .about-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    margin-bottom: 14px;
+  }
+  .about-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--accent);
+  }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: #cfcfcf;
+    padding: 56px 0 28px;
+    font-size: 14px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  footer h5 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
+  }
+  footer .logo-text { color: #fff; }
+  footer .logo-text small { color: #999; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 8px; }
+  footer a { color: #cfcfcf; transition: color 0.2s; }
+  footer a:hover { color: #fff; }
+  footer p { color: #a8a8a8; font-size: 13.5px; }
+
+  .disclaimer {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #cfcfcf;
+    margin-top: 8px;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    color: #888;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .products { grid-template-columns: repeat(2, 1fr); }
+    .about-grid { grid-template-columns: 1fr; gap: 24px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    nav ul { gap: 18px; }
+    .hero { padding: 48px 0 40px; }
+    .section { padding: 56px 0; }
+  }
+
+  @media (max-width: 560px) {
+    .products { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    nav { display: none; }
+    .header-inner { padding: 18px 0; }
+    .hero { padding: 36px 0 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>Curadoria diária de ofertas e oportunidades em marketplaces confiáveis</span>
+</div>
+
+<header>
+  <div class="container header-inner">
+    <a href="#" class="logo" aria-label="Achados e Promoções Online">
+      <div class="logo-mark">A</div>
+      <div class="logo-text">
+        Achados &amp; Promoções
+        <small>Online · desde 2024</small>
+      </div>
+    </a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#ofertas">Ofertas</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Curadoria semanal</span>
+      <h1>Encontramos as melhores ofertas, <em>você só aproveita.</em></h1>
+      <p class="lead">Selecionamos produtos, descontos e oportunidades encontrados em marketplaces como AliExpress, Amazon e Shopee — sem ruído, sem pressa, sem pegadinha. Apenas o que vale a pena conferir.</p>
+      <div class="badges">
+        <span class="badge">✓ Links verificados</span>
+        <span class="badge">✓ Atualizado toda semana</span>
+        <span class="badge">✓ Avaliações reais</span>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h3>Como funciona</h3>
+      <p>Trabalhamos como curadores independentes. Veja o nosso compromisso:</p>
+      <ul>
+        <li>Apenas produtos com boa avaliação dos compradores</li>
+        <li>Preços conferidos no momento da publicação</li>
+        <li>Transparência sobre links de afiliado</li>
+        <li>Sem popups, redirecionamentos ou spam</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="ofertas">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Ofertas em destaque desta semana</h2>
+      </div>
+      <p>Produtos selecionados manualmente entre milhares de opções disponíveis nos marketplaces parceiros.</p>
+    </div>
+
+    <div class="products">
+
+      <!-- Product 1 -->
+      <article class="product">
+        <div class="product-img">
+          <span class="product-tag hot">-45%</span>
+          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="20" y="28" width="60" height="44" rx="4"/>
+            <rect x="30" y="38" width="40" height="24" rx="2"/>
+            <line x1="40" y1="72" x2="40" y2="80"/>
+            <line x1="60" y1="72" x2="60" y2="80"/>
+            <line x1="32" y1="80" x2="68" y2="80"/>
+          </svg>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Eletrônicos</span>
+          <h3>Monitor Portátil 15.6" Full HD</h3>
+          <p>Tela IPS com conexão USB-C, ideal para home office e setup de notebook. Inclui capa protetora.</p>
+          <div class="price-row">
+            <span class="price">R$ 489</span>
+            <span class="old-price">R$ 889</span>
+          </div>
+          <a href="#" class="btn" rel="nofollow sponsored" target="_blank">
+            Ver oferta
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product">
+        <div class="product-img">
+          <span class="product-tag">Novo</span>
+          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="50" cy="50" r="24"/>
+            <circle cx="50" cy="50" r="10"/>
+            <circle cx="50" cy="50" r="2" fill="#c0392b"/>
+            <rect x="26" y="34" width="48" height="32" rx="6"/>
+          </svg>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Fotografia</span>
+          <h3>Lente Macro Universal para Celular</h3>
+          <p>Kit 3 em 1 com lente macro, grande angular e olho de peixe. Compatível com a maioria dos smartphones.</p>
+          <div class="price-row">
+            <span class="price">R$ 67</span>
+            <span class="old-price">R$ 129</span>
+          </div>
+          <a href="#" class="btn" rel="nofollow sponsored" target="_blank">
+            Ver oferta
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product">
+        <div class="product-img">
+          <span class="product-tag hot">Top vendas</span>
+          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M30 40 L30 75 Q30 80 35 80 L65 80 Q70 80 70 75 L70 40"/>
+            <path d="M25 40 L75 40 L72 30 L28 30 Z"/>
+            <circle cx="50" cy="55" r="6"/>
+          </svg>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Casa &amp; Cozinha</span>
+          <h3>Organizador Modular de Cozinha</h3>
+          <p>Conjunto com 6 peças empilháveis para mantimentos. Material livre de BPA e fechamento hermético.</p>
+          <div class="price-row">
+            <span class="price">R$ 119</span>
+            <span class="old-price">R$ 199</span>
+          </div>
+          <a href="#" class="btn" rel="nofollow sponsored" target="_blank">
+            Ver oferta
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product">
+        <div class="product-img">
+          <span class="product-tag">-30%</span>
+          <svg viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M35 32 Q35 22 50 22 Q65 22 65 32 L65 50 Q72 52 72 60 Q72 70 60 70 L40 70 Q28 70 28 60 Q28 52 35 50 Z"/>
+            <line x1="45" y1="70" x2="45" y2="78"/>
+            <line x1="55" y1="70" x2="55" y2="78"/>
+          </svg>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Áudio</span>
+          <h3>Fone Bluetooth com Cancelamento de Ruído</h3>
+          <p>Bateria de até 30h, conexão estável e som equilibrado. Estojo de carga incluso na embalagem.</p>
+          <div class="price-row">
+            <span class="price">R$ 219</span>
+            <span class="old-price">R$ 319</span>
+          </div>
+          <a href="#" class="btn" rel="nofollow sponsored" target="_blank">
+            Ver oferta
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="sobre">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Por que confiar na nossa curadoria</h2>
+      </div>
+      <p>Nosso trabalho é separar o joio do trigo entre milhões de listagens — para você economizar tempo e dinheiro.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-item">
+        <div class="about-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h4>Verificação manual</h4>
+        <p>Cada produto é analisado individualmente quanto a reputação do vendedor, histórico de avaliações e tempo médio de envio.</p>
+      </div>
+      <div class="about-item">
+        <div class="about-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 1-2 8-9 8s-9-7-9-8 2-8 9-8 9 7 9 8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h4>Transparência total</h4>
+        <p>Sempre indicamos quando um link pode gerar comissão de afiliado. Isso não influencia nossa seleção — só a sustenta.</p>
+      </div>
+      <div class="about-item">
+        <div class="about-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h4>Sem pressão, sem spam</h4>
+        <p>Nada de popups, notificações invasivas ou contagens regressivas falsas. Você decide se a oferta vale a pena, sem manipulação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom: 16px;">
+          <div class="logo-mark">A</div>
+          <div class="logo-text">
+            Achados &amp; Promoções
+            <small>Online · desde 2024</small>
+          </div>
+        </div>
+        <p style="margin-bottom: 14px;">Curadoria independente de ofertas em marketplaces. Conteúdo informativo, sem vínculo oficial com as plataformas mencionadas.</p>
+        <div class="disclaimer">
+          <strong style="color:#fff;">Aviso:</strong> alguns links nesta página podem gerar comissão como afiliado, sem custo adicional para você.
+        </div>
+      </div>
+
+      <div>
+        <h5>Páginas</h5>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#ofertas">Ofertas</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+          <li><a href="#aviso">Aviso de afiliado</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="mailto:contato@achadosepromocoes.online">contato@<br>achadosepromocoes.online</a></li>
+          <li style="margin-top:10px; color:#888;">Resposta em até 48h úteis</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Achados &amp; Promoções Online. Todos os direitos reservados.</span>
+      <span>Feito com cuidado, no Brasil.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
